@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function buildActivityShareDetails(name, details) {
     const shareUrl = new URL(window.location.href);
-    shareUrl.hash = `activity=${encodeURIComponent(name)}`;
+    shareUrl.hash = new URLSearchParams({ activity: name }).toString();
 
     const schedule = formatSchedule(details);
     const title = `${name} at Mergington High School`;
